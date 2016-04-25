@@ -1,7 +1,7 @@
 <?php
 namespace Mageplaza\Seo\Model\Source;
 
-class Robots
+class Robots extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
 {
 
 	const DEFAULT_ROBOTS = 'INDEX,FOLLOW';
@@ -28,4 +28,5 @@ class Robots
 			'NOINDEX,NOFOLLOW'
 		);
 	}
+
 }
