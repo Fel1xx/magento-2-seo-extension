@@ -34,12 +34,11 @@ class Sitemap extends Template
     public function getProductCollection(){
        return $this->getCoreObject('Magento\Catalog\Model\Category')
            ->getProductCollection()
-           ->addAttributeToSelect('*');
+           ->addAttributeToSelect('*')
+           ->addFieldToFilter('visibility',4);
     }
     public function getCategoryCollection()
     {
-//        $collection = $this->_categoryCollection->create()
-//            ->addAttributeToSelect('*');
         $collection = $this->collection
             ->addAttributeToSelect('*');
         return $collection;
