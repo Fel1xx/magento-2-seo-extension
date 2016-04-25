@@ -66,7 +66,23 @@ class InstallData implements InstallDataInterface
                 'is_filterable_in_grid' => false,
             ]
         );
-
+        $eavSetup->addAttribute(
+            \Magento\Catalog\Model\Category::ENTITY,
+            'meta_robots',
+            [
+                'type' => 'varchar',
+                'label' => 'Meta Robots',
+                'input' => 'select',
+                'required' => false,
+                'sort_order' => 50,
+                'source' => 'Mageplaza\Seo\Model\Source\Robots',
+                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+                'group' => 'General Information',
+                'is_used_in_grid' => false,
+                'is_visible_in_grid' => false,
+                'is_filterable_in_grid' => false,
+            ]
+        );
         $installer = $setup;
 
         $installer->startSetup();
